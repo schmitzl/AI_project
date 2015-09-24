@@ -57,7 +57,7 @@ stemmed_filtered_word_tokens = [ps.stem(word) for word in filtered_word_tokens]
 from nltk.corpus import state_union
 
 # read in txt file
-# train_text = state_union.raw("train.txt")
+# train_text = state_union.raw("songs.csv")
 
 # categorizes words into verbs, adverbs, adjectives... not sure we need this - so no further code here
 # in case we need it: watch video on https://www.youtube.com/watch?v=6j6M2MtEqi8
@@ -69,5 +69,5 @@ from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 
 
-print lemmatizer.lemmatize("better")
-print lemmatizer.lemmatize("better", pos="a")
+# lemmatizer.lemmatize("better")
+# print lemmatizer.lemmatize("better", pos="a")
