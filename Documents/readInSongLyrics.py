@@ -38,3 +38,6 @@ ps = PorterStemmer()
 # -- lemmatize --
 lemmatizer = WordNetLemmatizer()
 #lemmatized_filtered_word_tokens = [lemmatizer.lemmatize(word) for word in filtered_word_tokens]
+
+
+# I WILL USE THIS METHOD TO READ IN THE WORDS. I WILL DO THIS ACCORDING TO THIS VIDEO https://www.youtube.com/watch?v=zi16nl82AMA. PREVIOUS PROCESSING OF THE cvs FILE IS NEEDED OF COURSE, SO THAT THIS METHOD CAN BE USED. I WILL WORK ON THIS DURING THE NEXT DAYS :)
