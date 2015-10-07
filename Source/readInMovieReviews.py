@@ -40,6 +40,7 @@ filtered_words = [word for word in all_words if not word in stop_words]
 #lemmatizer = WordNetLemmatizer()
 #lemmatized_filtered_words = [lemmatizer.lemmatize(word) for word in filtered_words]
 
+print all_words [:100]
 
 # get the word frequency
 all_words = nltk.FreqDist(all_words) # ordered words according to the amount of its appearances
@@ -53,15 +54,13 @@ def find_features(document):
     features = {} # empty dictionary
     for word in word_features:
         features[word] = (word in words)
-
+    
     return features
 
 #print((find_features(movie_reviews.words('neg/cv000_29416.txt'))))
 featuresets = [(find_features(rev), category) for (rev, category) in documents]
 
 training_set = featuresets[:1900] #take the first 1900 words as a training set
-
-print training_set
 
 testing_set = featuresets[1900:] #take the other words as the test set
 

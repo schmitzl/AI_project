@@ -17,13 +17,13 @@ allwords_f = open("dictionary.pickle", "r")
 all_words = pickle.load(allwords_f)
 allwords_f.close()
 
-#print all_words
 
 # get the word frequency
 all_words = nltk.FreqDist(all_words) # ordered words according to the amount of its appearances
-print(all_words.most_common(1500)) # show the 15 most common words
+print(all_words.most_common(15)) # show the 15 most common words
 
-word_features = list(all_words.keys()) [:50000] #only look at 6000 most common words
+word_features = list(all_words.keys()) #only look at 6000 most common words
+
 
 def find_features(document):
     words = set(document) # first part of the tuple
@@ -35,9 +35,9 @@ def find_features(document):
 
 featuresets = [(find_features(lyrics), category) for (lyrics, category) in documents]
 
-training_set = featuresets[:2000] #take the first 5000 words as a training set
+training_set = featuresets[:5000] #take the first 5000 words as a training set
 
-testing_set = featuresets[2000:] #take the other words as the test set
+testing_set = featuresets[5000:] #take the other words as the test set
 
 
 

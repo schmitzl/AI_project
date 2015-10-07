@@ -85,7 +85,7 @@ documents = []
 all_words = ""
 
 
-with open('songs.csv', 'rb') as f:
+with open('songs.csv', 'r') as f:
     reader = csv.reader(f, delimiter=';')
     for line in reader:
         documents.append( (preproccessLyrics(line[1]), getMood(line[0])) )
@@ -98,8 +98,9 @@ save_documents = open("documents.pickle", "w") # use mode "rw" in windows
 pickle.dump(documents, save_documents)
 save_documents.close()
 
+all_words_list = all_words.split()
 
 #save dictionary
 save_dictionary = open("dictionary.pickle", "w") # use mode "rw" in windows
-pickle.dump(all_words, save_dictionary)
+pickle.dump(all_words_list, save_dictionary)
 save_dictionary.close()
