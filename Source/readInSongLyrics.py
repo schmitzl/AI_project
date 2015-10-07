@@ -54,7 +54,7 @@ def getMood(subMood):
 
 
     if subMood in posMoods:
-        return "positiv"
+        return "positive"
 
     return "negative"
 
