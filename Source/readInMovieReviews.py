@@ -60,6 +60,9 @@ def find_features(document):
 featuresets = [(find_features(rev), category) for (rev, category) in documents]
 
 training_set = featuresets[:1900] #take the first 1900 words as a training set
+
+print training_set
+
 testing_set = featuresets[1900:] #take the other words as the test set
 
 
@@ -151,31 +154,31 @@ print("MNB_classifier acczraxe: ", (nltk.classify.accuracy(MNB_classifier, testi
 
 
 # --- COMBINING ALGOS ---
-from nltk.classify import ClassifierI
-from statistics import mode
+#from nltk.classify import ClassifierI
+#from statistics import mode
 
-class VoteClassifier(ClassifierI):
-    def _init_(self, *classifiers):
-        self._classifiers = classifiers
+#class VoteClassifier(ClassifierI):
+#   def _init_(self, *classifiers):
+#       self._classifiers = classifiers
         
-    def classify(self, features):
-        votes = []
-        for c in self._classifiers:
-            v = c.classify(features)
-            votes.append(v)
-        return mode(votes)
+        #   def classify(self, features):
+        #votes = []
+        #for c in self._classifiers:
+        #   v = c.classify(features)
+        #   votes.append(v)
+        #return mode(votes)
         
-    def confidence(self, features):
-        votes = []
-        for c in self._classifiers:
-            v = c.classify(features)
-            votes.append(v)
-        choice_votes = votes_count(mode(votes))
-        conf = choice_votes / len(votes)
-        return conf
+        #def confidence(self, features):
+        #votes = []
+        #for c in self._classifiers:
+        #   v = c.classify(features)
+        #   votes.append(v)
+        #choice_votes = votes_count(mode(votes))
+        #conf = choice_votes / len(votes)
+#return conf
 
 
-voted_classifier = VoteClassifier(classifier,MNB_classifier)
+#voted_classifier = VoteClassifier(classifier,MNB_classifier)
                                   #,BernoulliNB_classifier, LogisticRegression_classifier,SVC_classifier,LinearSVC_classifier,NuSVC_classifier)
 
-print("voted_classifier acczraxe: ", (nltk.classify.accuracy(voted_classifier, testing_set))*100)
+#print("voted_classifier acczraxe: ", (nltk.classify.accuracy(voted_classifier, testing_set))*100)

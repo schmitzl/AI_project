@@ -36,6 +36,7 @@ def find_features(document):
 featuresets = [(find_features(lyrics), category) for (lyrics, category) in documents]
 
 training_set = featuresets[:2000] #take the first 5000 words as a training set
+
 testing_set = featuresets[2000:] #take the other words as the test set
 
 
