@@ -17,12 +17,14 @@ allwords_f = open("dictionary.pickle", "r")
 all_words = pickle.load(allwords_f)
 allwords_f.close()
 
+#print documents
+
 
 # get the word frequency
 all_words = nltk.FreqDist(all_words) # ordered words according to the amount of its appearances
 print(all_words.most_common(15)) # show the 15 most common words
 
-word_features = list(all_words.keys()) #only look at 6000 most common words
+word_features = list(all_words.keys())[:500] #only look at 6000 most common words
 
 
 def find_features(document):
@@ -35,9 +37,9 @@ def find_features(document):
 
 featuresets = [(find_features(lyrics), category) for (lyrics, category) in documents]
 
-training_set = featuresets[:5000] #take the first 5000 words as a training set
+training_set = featuresets[:500] #take the first 5000 words as a training set
 
-testing_set = featuresets[5000:] #take the other words as the test set
+testing_set = featuresets[500:] #take the other words as the test set
 
 
 
@@ -65,17 +67,16 @@ classifier.show_most_informative_features(15)
 #classifier_f = open("naivebayes.pickle", "r")
 #classifier = pickle.load(classifier_f)
 #classifier_f.close()
-
 #classifier.show_most_informative_features(15)
 
 # --- CLASSIFIER WITH SCIKITLEARN ---
-#from sklearn.naive_bayes import MultinomialNB, BernoulliNB
+from sklearn.naive_bayes import MultinomialNB, BernoulliNB
 
 # Naive Bayes
-#MNB_classifier = SklearnClassifier(MultinomialNB())
-#MNB_classifier.train(training_set)
+MNB_classifier = SklearnClassifier(MultinomialNB())
+MNB_classifier.train(training_set)
 
-#print("MNB_classifier acczraxe: ", (nltk.classify.accuracy(MNB_classifier, testing_set))*100)
+print("MNB_classifier acczraxe: ", (nltk.classify.accuracy(MNB_classifier, testing_set))*100)
 
 # GaussianNB
 #GaussianNB_classifier = SklearnClassifier(GaussianNB())
@@ -84,46 +85,46 @@ classifier.show_most_informative_features(15)
 #print("GaussianNB acczraxe: ", (nltk.classify.accuracy(GaussianNB_classifier, testing_set))*100)
 
 # BernoulliNB
-#BernoulliNB_classifier = SklearnClassifier(BernoulliNB())
-#BernoulliNB_classifier.train(training_set)
+BernoulliNB_classifier = SklearnClassifier(BernoulliNB())
+BernoulliNB_classifier.train(training_set)
 
-#print("BernoulliNB acczraxe: ", (nltk.classify.accuracy(BernoulliNB_classifier, testing_set))*100)
-
-
+print("BernoulliNB acczraxe: ", (nltk.classify.accuracy(BernoulliNB_classifier, testing_set))*100)
 
 
-#from sklearn.linear_model import LogisticRegression, SGDClassifier
-#from sklearn.svm import SVC, LinearSVC, NuSVC
+
+
+from sklearn.linear_model import LogisticRegression, SGDClassifier
+from sklearn.svm import SVC, LinearSVC, NuSVC
 
 # LogisticRegression
-#LogisticRegression_classifier = SklearnClassifier(LogisticRegression())
-#LogisticRegression_classifier.train(training_set)
+LogisticRegression_classifier = SklearnClassifier(LogisticRegression())
+LogisticRegression_classifier.train(training_set)
 
-#print("LogisticRegression acczraxe: ", (nltk.classify.accuracy(LogisticRegression_classifier, testing_set))*100)
+print("LogisticRegression acczraxe: ", (nltk.classify.accuracy(LogisticRegression_classifier, testing_set))*100)
 
 # SGDClassifier
-#SGD_classifier = SklearnClassifier(SGDClassifier())
-#SGD_classifier.train(training_set)
+SGD_classifier = SklearnClassifier(SGDClassifier())
+SGD_classifier.train(training_set)
 
-#print("SGDClassifier acczraxe: ", (nltk.classify.accuracy(SGD_classifier, testing_set))*100)
+print("SGDClassifier acczraxe: ", (nltk.classify.accuracy(SGD_classifier, testing_set))*100)
 
 
 # SVC
-#SVC_classifier = SklearnClassifier(SVC())
-#SVC_classifier.train(training_set)
+SVC_classifier = SklearnClassifier(SVC())
+SVC_classifier.train(training_set)
 
-#print("SVC acczraxe: ", (nltk.classify.accuracy(SVC_classifier, testing_set))*100)
+print("SVC acczraxe: ", (nltk.classify.accuracy(SVC_classifier, testing_set))*100)
 
 # LinearSVC
-#LinearSVC_classifier = SklearnClassifier(LinearSVC())
-#LinearSVC_classifier.train(training_set)
+LinearSVC_classifier = SklearnClassifier(LinearSVC())
+LinearSVC_classifier.train(training_set)
 
-#print("LinearSVC acczraxe: ", (nltk.classify.accuracy(LinearSVC_classifier, testing_set))*100)
+print("LinearSVC acczraxe: ", (nltk.classify.accuracy(LinearSVC_classifier, testing_set))*100)
 
 # NuSVC
-#NuSVC_classifier = SklearnClassifier(NuSVC())
-#NuSVC_classifier.train(training_set)
+NuSVC_classifier = SklearnClassifier(NuSVC())
+NuSVC_classifier.train(training_set)
 
-#print("NuSVC_classifier acczraxe: ", (nltk.classify.accuracy(NuSVC_classifier, testing_set))*100)
+print("NuSVC_classifier acczraxe: ", (nltk.classify.accuracy(NuSVC_classifier, testing_set))*100)
 
 

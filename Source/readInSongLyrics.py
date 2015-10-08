@@ -68,7 +68,7 @@ def preproccessLyrics(lyrics):
 
     stop_words = set(stopwords.words("english"))
     filtered_word_tokens = [word.lower() for word in word_tokens if not word in stop_words]
-    
+    #filtered_word_tokens = [word.lower() for word in word_tokens]
 
     ps = PorterStemmer()
     stemmed_filtered_word_tokens = [ps.stem(word) for word in filtered_word_tokens]
@@ -85,8 +85,8 @@ documents = []
 all_words = ""
 
 
-with open('songs.csv', 'r') as f:
-    reader = csv.reader(f, delimiter=';')
+with open('evenSmallerSongDb.csv', 'rU') as f:
+    reader = csv.reader(f, delimiter=';', dialect=csv.excel_tab)
     for line in reader:
         documents.append( (preproccessLyrics(line[1]), getMood(line[0])) )
         all_words += " " + preproccessLyrics(line[1])
