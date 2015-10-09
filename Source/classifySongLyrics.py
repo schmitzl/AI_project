@@ -9,6 +9,37 @@ import pickle
 from nltk.classify.scikitlearn import SklearnClassifier
 
 
+
+from nltk.classify import ClassifierI
+from statistics import mode
+
+class VoteClassifier(ClassifierI):
+    def _init_(self, *classifiers):
+        self._classifiers = classifiers
+    
+    def classify(self, features):
+        votes = []
+        for c in self._classifiers:
+            v = c.classify(features)
+            votes.append(v)
+        return mode(votes)
+    
+    def confidence(self, features):
+        votes = []
+        for c in self._classifiers:
+            v = c.classify(features)
+            votes.append(v)
+        choice_votes = votes.count(mode(votes))
+        conf =  choice_votes / len(votes)
+        return conf
+
+
+
+
+
+
+
+
 documents_f = open("documents.pickle", "r")
 documents = pickle.load(documents_f)
 documents_f.close()
@@ -88,7 +119,7 @@ print("MNB_classifier acczraxe: ", (nltk.classify.accuracy(MNB_classifier, testi
 BernoulliNB_classifier = SklearnClassifier(BernoulliNB())
 BernoulliNB_classifier.train(training_set)
 
-print("BernoulliNB acczraxe: ", (nltk.classify.accuracy(BernoulliNB_classifier, testing_set))*100)
+print("BernoulliNB accuracy: ", (nltk.classify.accuracy(BernoulliNB_classifier, testing_set))*100)
 
 
 
@@ -100,31 +131,44 @@ from sklearn.svm import SVC, LinearSVC, NuSVC
 LogisticRegression_classifier = SklearnClassifier(LogisticRegression())
 LogisticRegression_classifier.train(training_set)
 
-print("LogisticRegression acczraxe: ", (nltk.classify.accuracy(LogisticRegression_classifier, testing_set))*100)
+print("LogisticRegression accuracy: ", (nltk.classify.accuracy(LogisticRegression_classifier, testing_set))*100)
 
 # SGDClassifier
 SGD_classifier = SklearnClassifier(SGDClassifier())
 SGD_classifier.train(training_set)
 
-print("SGDClassifier acczraxe: ", (nltk.classify.accuracy(SGD_classifier, testing_set))*100)
+print("SGDClassifier accuracy: ", (nltk.classify.accuracy(SGD_classifier, testing_set))*100)
 
 
 # SVC
 SVC_classifier = SklearnClassifier(SVC())
 SVC_classifier.train(training_set)
 
-print("SVC acczraxe: ", (nltk.classify.accuracy(SVC_classifier, testing_set))*100)
+print("SVC accuracy: ", (nltk.classify.accuracy(SVC_classifier, testing_set))*100)
 
 # LinearSVC
 LinearSVC_classifier = SklearnClassifier(LinearSVC())
 LinearSVC_classifier.train(training_set)
 
-print("LinearSVC acczraxe: ", (nltk.classify.accuracy(LinearSVC_classifier, testing_set))*100)
+print("LinearSVC accuracy: ", (nltk.classify.accuracy(LinearSVC_classifier, testing_set))*100)
 
 # NuSVC
 NuSVC_classifier = SklearnClassifier(NuSVC())
 NuSVC_classifier.train(training_set)
 
-print("NuSVC_classifier acczraxe: ", (nltk.classify.accuracy(NuSVC_classifier, testing_set))*100)
+print("NuSVC_classifier accuracy: ", (nltk.classify.accuracy(NuSVC_classifier, testing_set))*100)
 
+
+
+
+
+
+
+
+
+
+
+voted_classifier = VoteClassifier(classifier,MNB_classifier,BernoulliNB_classifier, LogisticRegression_classifier,SVC_classifier,LinearSVC_classifier,NuSVC_classifier)
+
+print("voted_classifier accuracy: ", (nltk.classify.accuracy(voted_classifier, testing_set))*100)
 
