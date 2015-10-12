@@ -100,7 +100,7 @@ from sklearn.naive_bayes import MultinomialNB, BernoulliNB
 MNB_classifier = SklearnClassifier(MultinomialNB())
 MNB_classifier.train(training_set)
 
-print("MNB_classifier acczraxe: ", (nltk.classify.accuracy(MNB_classifier, testing_set))*100)
+print("MNB_classifier acczraxe: ", (nltk.classify.accuracy(MNB_classifier, training_set))*100)
 
 # GaussianNB
 #GaussianNB_classifier = SklearnClassifier(GaussianNB())
@@ -109,47 +109,47 @@ print("MNB_classifier acczraxe: ", (nltk.classify.accuracy(MNB_classifier, testi
 #print("GaussianNB acczraxe: ", (nltk.classify.accuracy(GaussianNB_classifier, testing_set))*100)
 
 # BernoulliNB
-#BernoulliNB_classifier = SklearnClassifier(BernoulliNB())
-#BernoulliNB_classifier.train(training_set)
+BernoulliNB_classifier = SklearnClassifier(BernoulliNB())
+BernoulliNB_classifier.train(training_set)
 
-#print("BernoulliNB acczraxe: ", (nltk.classify.accuracy(BernoulliNB_classifier, testing_set))*100)
-
-
+print("BernoulliNB acczraxe: ", (nltk.classify.accuracy(BernoulliNB_classifier, training_set))*100)
 
 
-#from sklearn.linear_model import LogisticRegression, SGDClassifier
-#from sklearn.svm import SVC, LinearSVC, NuSVC
+
+
+from sklearn.linear_model import LogisticRegression, SGDClassifier
+from sklearn.svm import SVC, LinearSVC, NuSVC
 
 # LogisticRegression
-#LogisticRegression_classifier = SklearnClassifier(LogisticRegression())
-#LogisticRegression_classifier.train(training_set)
+LogisticRegression_classifier = SklearnClassifier(LogisticRegression())
+LogisticRegression_classifier.train(training_set)
 
-#print("LogisticRegression acczraxe: ", (nltk.classify.accuracy(LogisticRegression_classifier, testing_set))*100)
+print("LogisticRegression acczraxe: ", (nltk.classify.accuracy(LogisticRegression_classifier, training_set))*100)
 
 # SGDClassifier
-#SGD_classifier = SklearnClassifier(SGDClassifier())
-#SGD_classifier.train(training_set)
+SGD_classifier = SklearnClassifier(SGDClassifier())
+SGD_classifier.train(training_set)
 
-#print("SGDClassifier acczraxe: ", (nltk.classify.accuracy(SGD_classifier, testing_set))*100)
+print("SGDClassifier acczraxe: ", (nltk.classify.accuracy(SGD_classifier, training_set))*100)
 
 
 # SVC
-#SVC_classifier = SklearnClassifier(SVC())
-#SVC_classifier.train(training_set)
+SVC_classifier = SklearnClassifier(SVC())
+SVC_classifier.train(training_set)
 
-#print("SVC acczraxe: ", (nltk.classify.accuracy(SVC_classifier, testing_set))*100)
+print("SVC acczraxe: ", (nltk.classify.accuracy(SVC_classifier, training_set))*100)
 
 # LinearSVC
-#LinearSVC_classifier = SklearnClassifier(LinearSVC())
-#LinearSVC_classifier.train(training_set)
+LinearSVC_classifier = SklearnClassifier(LinearSVC())
+LinearSVC_classifier.train(training_set)
 
-#print("LinearSVC acczraxe: ", (nltk.classify.accuracy(LinearSVC_classifier, testing_set))*100)
+print("LinearSVC acczraxe: ", (nltk.classify.accuracy(LinearSVC_classifier, training_set))*100)
 
 # NuSVC
-#NuSVC_classifier = SklearnClassifier(NuSVC())
-#NuSVC_classifier.train(training_set)
+NuSVC_classifier = SklearnClassifier(NuSVC())
+NuSVC_classifier.train(training_set)
 
-#print("NuSVC_classifier acczraxe: ", (nltk.classify.accuracy(NuSVC_classifier, testing_set))*100)
+print("NuSVC_classifier acczraxe: ", (nltk.classify.accuracy(NuSVC_classifier, training_set))*100)
 
 
 # --- COMBINING ALGOS ---
