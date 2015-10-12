@@ -1,5 +1,23 @@
 \begin{thebibliography}{1}
 
+\bibitem{downie20082007}
+XHJS Downie, Cyril Laurier, and MBAF Ehmann.
+\newblock The 2007 mirex audio mood classification task: Lessons learned.
+\newblock In {\em ISMIR 2008: Proceedings of the 9th International Conference
+  of Music Information Retrieval}, page 462. Lulu. com, 2008.
+
+\bibitem{kim2010music}
+Youngmoo~E Kim, Erik~M Schmidt, Raymond Migneco, Brandon~G Morton, Patrick
+  Richardson, Jeffrey Scott, Jacquelin~A Speck, and Douglas Turnbull.
+\newblock Music emotion recognition: A state of the art review.
+\newblock In {\em Proc. ISMIR}, pages 255--266. Citeseer, 2010.
+
+\bibitem{yang2009music}
+Dan Yang and Won-Sook Lee.
+\newblock Music emotion identification from lyrics.
+\newblock In {\em Multimedia, 2009. ISM'09. 11th IEEE International Symposium
+  on}, pages 624--629. IEEE, 2009.
+
 \bibitem{yang2008regression}
 Yi-Hsuan Yang, Yu-Ching Lin, Ya-Fan Su, and Homer~H Chen.
 \newblock A regression approach to music emotion recognition.

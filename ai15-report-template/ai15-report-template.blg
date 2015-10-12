@@ -3,46 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ai15-report-template.aux
 The style file: plain.bst
 Database file #1: reflist.bib
-Warning--I didn't find a database entry for "RussellNorvigAIBook3rd"
-You've used 1 entry,
+You've used 4 entries,
             2118 wiz_defined-function locations,
-            507 strings with 4275 characters,
-and the built_in function-call counts, 417 in all, are:
-= -- 39
-> -- 23
-< -- 0
-+ -- 10
-- -- 8
-* -- 37
-:= -- 76
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 7
+            524 strings with 4872 characters,
+and the built_in function-call counts, 1932 in all, are:
+= -- 195
+> -- 97
+< -- 3
++ -- 40
+- -- 34
+* -- 134
+:= -- 300
+add.period$ -- 15
+call.type$ -- 4
+change.case$ -- 29
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 11
-empty$ -- 28
-format.name$ -- 8
-if$ -- 79
+cite$ -- 4
+duplicate$ -- 78
+empty$ -- 142
+format.name$ -- 34
+if$ -- 424
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 8
-num.names$ -- 2
-pop$ -- 5
+int.to.str$ -- 4
+missing$ -- 4
+newline$ -- 23
+num.names$ -- 8
+pop$ -- 37
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 25
 quote$ -- 0
-skip$ -- 7
+skip$ -- 58
 stack$ -- 0
-substring$ -- 31
-swap$ -- 1
-text.length$ -- 0
+substring$ -- 117
+swap$ -- 32
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
+type$ -- 16
 warning$ -- 0
-while$ -- 4
-width$ -- 2
-write$ -- 13
-(There was 1 warning)
+while$ -- 17
+width$ -- 5
+write$ -- 49
