@@ -73,6 +73,7 @@ Since our work deals with different approaches of categorising and classifying s
 \label{sec:relwork}
 Our work is mainly based the on paper of Youngmoo E. Kim et al.\,\cite{kim2010music}. It gives an overview of recent approaches of emotion recognition in lyrics.  Most of the presented approaches are content-based and are therefore relevant references for our work. Not only do they deal with different categorisations of mood but also treat variations of classifiers. This work provides a good inside into what has already been done and what worked well. Therefore it can be seen as the foundation we built our work on. We realised some of the presented methods and compared them to each other. 
 
+Different bag-of-words model classifiers are explained by Li et al.\,\cite{li1998classification}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -86,13 +87,35 @@ bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
 \subsection{Implementation}
 \label{sec:impl}
 
-Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+The basic model we used for our text analyser is the bag-of-words model\,\cite{Mitchell}. The functionality is illustrated in the figure \ref{fig:bagOfWords}. In this model a database with labeled data such as lyrics are stored. The next step would be to preprocess the lyrics and create a dicitonary with $n$-grams based on it. The database is divded into two parts: a training and a test set. Using this data, a classifier is trained with a training set and its accuracy can then be evaluated with the classification of the test set. In the following abstracts the individual parts of the bag-of-words model will be explained in detail. 
 
 \paragraph{Database} The database was one of the most difficult parts of this research. Due to copyright issues it was not possible to access a already available database and we had to built one on our own. Some earlier researches use \texttt{Allmusic.com} as a basis for the database \cite{kim2010music}, since it provides emotional labels for songs. For this reason a program has been written to extract the lyrics with its song's emotional label. 
 
 Even though this prelabeling of the songs was helpful, with over ... emotional labels it were simply to many categories to use. Therefore we had to find supercategories for the existing labels. Downie et al. suggest in \,\cite{downie20082007}  to use five clusters of emotions. Whereas Yang and Lee only suggests a binary distinction into positive and negative emotions\,\cite{yang2009music}. Both variants were tested during our research.
+
+\paragraph{Pre-processing} The lyrics have been pre-processed the same way for each of the variants of the text analyser. Stop-words are filtered out using the Natural Language Toolkit and special character are deleted. In a next step, every word of the lyric is stemmed which means that it is transferred into its basic form. For example "wait" and "waiting" would be interpreted as the same word after the stemming has been done. The pre-processing is performed due to avoid misclassifications. 
+
+\paragraph{Feature extraction} The feature extraction is condtucted for all lyrics. The procedure consists of transferring the lyrics into $n$-gram representation. We considered only 1-, 2- and 3-grams as reasonable parameters which is why only these have been tested in our study. 
+
+\paragraph{Classification} The Natural Language Toolkit and the SciKit-Learn library provide the most commonly used text classifiers. In the following section the tested classifiers will be introduced. 
+
+\begin{itemize}
+\item \textit{Naive Bayes} Let $\mathcal{C} = (c_1,\dots,c_n)$ be the categories and $n$ the number of categories. Given a document $\mathcal{D}$ and its word list $\mathcal{W} = (w_1, \dots, w_m)$ with $m$ being the number of words of a certain document, the Naive Bayes classifier determines the category of a document as follows:
+
+$$
+c^*_{NB} = argmax_{c_{j \in \mathcal{C}}} P(c_j) \prod^d_{i = 1} P(w_i | c_j)
+$$
+with $P(c_j)$ being the \textit{a priori} probability of a class $c_j$ and $P(w_i | c_j)$ being the conditional probability of the word $w_i$ given class $c_j$.
+
+Naive Bayes will only work well for large enough datasets. 
+\item \textit{Multinomial Naive Bayes}
+\item \textit{Bernoulli Naive Bayes}
+\item \textit{Logistic regression}
+\item \textit{Stochastic gradient descent}
+\item \textit{Support vector machine}
+\item \textit{Linear support vector machine}
+\item \textit{Combination of multiple classifiers} We combined all introduced classifier into one classifier. It basically classifies documents according to how many classifiers resulted into a certain category. The category, to which most of the classification results belong to, gets selected as the resulting category of the song.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

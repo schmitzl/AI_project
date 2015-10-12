@@ -12,6 +12,16 @@ Youngmoo~E Kim, Erik~M Schmidt, Raymond Migneco, Brandon~G Morton, Patrick
 \newblock Music emotion recognition: A state of the art review.
 \newblock In {\em Proc. ISMIR}, pages 255--266. Citeseer, 2010.
 
+\bibitem{li1998classification}
+Yong~H Li and Anil~K. Jain.
+\newblock Classification of text documents.
+\newblock {\em The Computer Journal}, 41(8):537--546, 1998.
+
+\bibitem{Mitchell}
+Thomas~M. Mitchell.
+\newblock {\em Machine Learning}.
+\newblock McGraw-Hill, Inc., New York, NY, USA, 1 edition, 1997.
+
 \bibitem{yang2009music}
 Dan Yang and Won-Sook Lee.
 \newblock Music emotion identification from lyrics.

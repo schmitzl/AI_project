@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ai15-report-template.aux
 The style file: plain.bst
 Database file #1: reflist.bib
-You've used 4 entries,
+You've used 6 entries,
             2118 wiz_defined-function locations,
-            524 strings with 4872 characters,
-and the built_in function-call counts, 1932 in all, are:
-= -- 195
-> -- 97
+            540 strings with 5091 characters,
+and the built_in function-call counts, 2492 in all, are:
+= -- 252
+> -- 117
 < -- 3
-+ -- 40
-- -- 34
-* -- 134
-:= -- 300
-add.period$ -- 15
-call.type$ -- 4
-change.case$ -- 29
++ -- 48
+- -- 40
+* -- 171
+:= -- 395
+add.period$ -- 21
+call.type$ -- 6
+change.case$ -- 38
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 78
-empty$ -- 142
-format.name$ -- 34
-if$ -- 424
+cite$ -- 6
+duplicate$ -- 101
+empty$ -- 191
+format.name$ -- 40
+if$ -- 541
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 4
-newline$ -- 23
-num.names$ -- 8
-pop$ -- 37
+int.to.str$ -- 6
+missing$ -- 7
+newline$ -- 33
+num.names$ -- 12
+pop$ -- 46
 preamble$ -- 1
-purify$ -- 25
+purify$ -- 32
 quote$ -- 0
-skip$ -- 58
+skip$ -- 72
 stack$ -- 0
-substring$ -- 117
-swap$ -- 32
+substring$ -- 152
+swap$ -- 34
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
+type$ -- 22
 warning$ -- 0
-while$ -- 17
-width$ -- 5
-write$ -- 49
+while$ -- 23
+width$ -- 7
+write$ -- 72
