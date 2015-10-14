@@ -108,11 +108,37 @@ $$
 with $P(c_j)$ being the \textit{a priori} probability of a class $c_j$ and $P(w_i | c_j)$ being the conditional probability of the word $w_i$ given class $c_j$.
 
 Naive Bayes will only work well for large enough datasets. 
+
 \item \textit{Multinomial Naive Bayes}
+Multinomial Naive Bayes extends the Naive Bayes algorithm to handle multinomial distributed data. In text analysis this is particularly useful where events represent the occurrence of a word in a document. 
+
+A feature vector $w = (w_1, \dots, w_n)$ is given where $w_i$ counting the number of times a word $i$ was observed in a particular instance. The likelihood of observing a histogram $\mathbf{w}$ is then given by,
+
+$$
+ P(\mathbf{w}| c_j) = \frac{(\sum_{i}{w_i})!}{\prod_{i} w_i!}\prod_{i}p^{w_i}_{ji}
+
+$$
+
+Here $p_{ki}$ is part of a multinomial distribution $p_{k}$ and the probability that a word $i$ is observed.
+
 \item \textit{Bernoulli Naive Bayes}
+In contrast to the Multinomial NB the Bernoulli NB uses binary term occurrence rather than term frequencies which allows it to penalize non-occuring terms. Although there may be multiple features, each one is assumed to be a binary valued variable. Thus samples are represented as binary feature vectors. The likelihood of a feature vector given a category is given by,
+
+$$
+ P(\mathbf{w}| c_j) =\prod_{i} p^{w_i}_{ji}(1-p_{ji})^{1-w_i}
+
+$$
+
+
+The model is particularly useful for shorter texts where the lack of certain features can tell you more than solely analyzing occurring features. 
+
 \item \textit{Logistic regression}
+Logistic regression is a linear model for classification where the probabilities describing the possible outcomes of a single event are modeled using a logistic function.
+
 \item \textit{Stochastic gradient descent}
+
 \item \textit{Support vector machine}
+Supper 
 \item \textit{Linear support vector machine}
 \item \textit{Combination of multiple classifiers} We combined all introduced classifier into one classifier. It basically classifies documents according to how many classifiers resulted into a certain category. The category, to which most of the classification results belong to, gets selected as the resulting category of the song.
 \end{itemize}
