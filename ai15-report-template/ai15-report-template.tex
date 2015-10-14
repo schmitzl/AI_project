@@ -12,9 +12,9 @@
 GROUP31\\
 \begin{tabular}{cc}
 Akash Patel & Christoph Kaiser \\
- 					& 920416-T336\\
-BIRTHDATE1 & 16/04/92 \\
-MAIL1@kth.se & ckai@kth.se \\
+ 921119-3256	 & 920416-T336\\
+19/11/92 & 16/04/92 \\
+akash@kth.se & ckai@kth.se \\
 \includegraphics[width=0.13\linewidth]{Alan_Turing_photo} & 
 \includegraphics[width=0.13\linewidth]{Alan_Turing_photo} \\
 & \\
@@ -36,7 +36,7 @@ MAIL1@kth.se & ckai@kth.se \\
 \fancyhf{}
 \lhead{DD2380 ai15} % DO NOT REMOVE!!!!
 \rhead{A. Patel, C. Kaiser, L. Schmitz, N. Tatarakis} %% UPDATE WITH YOUR NAMES
-
+\fancyfoot[LE,RO]{\thepage}
 \begin{document}
 
 \maketitle
@@ -89,6 +89,15 @@ bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
 
 The basic model we used for our text analyser is the bag-of-words model\,\cite{Mitchell}. The functionality is illustrated in the figure \ref{fig:bagOfWords}. In this model a database with labeled data such as lyrics are stored. The next step would be to preprocess the lyrics and create a dicitonary with $n$-grams based on it. The database is divded into two parts: a training and a test set. Using this data, a classifier is trained with a training set and its accuracy can then be evaluated with the classification of the test set. In the following abstracts the individual parts of the bag-of-words model will be explained in detail. 
 
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{flowChartBagOfWords}
+\caption{A description that makes browsing the paper easy and clearly 
+describes what is in the picture. Make sure that the text in the figure 
+is large enough to read and that the axes are labelled.}
+\label{fig:bagOfWords}
+\end{figure}
+
 \paragraph{Database} The database was one of the most difficult parts of this research. Due to copyright issues it was not possible to access a already available database and we had to built one on our own. Some earlier researches use \texttt{Allmusic.com} as a basis for the database \cite{kim2010music}, since it provides emotional labels for songs. For this reason a program has been written to extract the lyrics with its song's emotional label. 
 
 Even though this prelabeling of the songs was helpful, with over ... emotional labels it were simply to many categories to use. Therefore we had to find supercategories for the existing labels. Downie et al. suggest in \,\cite{downie20082007}  to use five clusters of emotions. Whereas Yang and Lee only suggests a binary distinction into positive and negative emotions\,\cite{yang2009music}. Both variants were tested during our research.
@@ -116,7 +125,6 @@ A feature vector $w = (w_1, \dots, w_n)$ is given where $w_i$ counting the numbe
 
 $$
  P(\mathbf{w}| c_j) = \frac{(\sum_{i}{w_i})!}{\prod_{i} w_i!}\prod_{i}p^{w_i}_{ji}
-
 $$
 
 Here $p_{ki}$ is part of a multinomial distribution $p_{k}$ and the probability that a word $i$ is observed.
@@ -126,7 +134,6 @@ In contrast to the Multinomial NB the Bernoulli NB uses binary term occurrence r
 
 $$
  P(\mathbf{w}| c_j) =\prod_{i} p^{w_i}_{ji}(1-p_{ji})^{1-w_i}
-
 $$
 
 
@@ -147,19 +154,18 @@ Supper
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimental results}
 \label{sec:exps}
-
+The goal of our experiment was to compare the performance of different variants of the bag-of-words model classification for emotion in lyrics. 
  
 
 \subsection{Experiemntal setup}
-Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+In order to compare the performance of the different classifier variants we changed various parameters. The effect of different amounts of emotional categories have been tested, as well as variations of the $n$ of the $n$-grams, the size of the trainingsset and classifiers.
+
 
 \subsection{Experiment ...}
 
-\paragraph{Drawbacks} We were aware of the difficulty of the task of designing a sufficient lyrics classifier. Especially in the last years a lot of research has been conducted in this area but there is still a lack of a reliable lyrics analyser. But during our research we were able to gain a better inside into the nature of this difficulty. Feelings and emotions are something very personal, and the perception of the emotion which is transferred by a certain songtext highly depends on the person who is reading the lyrics. It is not unusal that two different people might disagree on the general mood of a lyrical text. This is why it is of supreme importance to select a representative model of categories.
+\paragraph{Drawbacks} We were aware of the difficulty of the task of designing a sufficient lyrics classifier. Especially in the last years a lot of research has been conducted in this area but there is still a lack of a reliable lyrics analyser. But during our research we were able to gain a better inside into the nature of this difficulty. Feelings and emotions are something very personal, and the perception of the emotion which is transferred by a certain songtext highly depends on the person who is reading the lyrics. It is not unusal that two different people might disagree on the general mood of a lyrical text\,\cite{wilson2005recognizing}. This is why it is of supreme importance to select a representative model of categories.
 
-During our research we came to the conclusion that the use of only two categories - positive and negative - seem to have let to an overgeneralisation of emotions. Even the categories itself which were provided by \texttt{Allmusic.com} could not clearly be mapped to one of these two categories. To illustrate the difficulty we discovered, a research has been done. We used a questionnaire were we asked people to evaluate the categories from \texttt{Allmusic.com} as either negative or postive and to do the same with some randomly picked song lyrics. The results are shown in figure \ref{fig:histogram}. It can be seen that there was a high difference of opinion across participants. This emphasizes the personal perception of emotion. Due to this, it cannot be expected to gain a higher accuracy by a classifier in emotion categorisation.
+\paragraph{Variations in categorisation} During our research we came to the conclusion that the use of only two categories - positive and negative - seem to have let to an overgeneralisation of emotions. Even the categories itself which were provided by \texttt{Allmusic.com} could not clearly be mapped to one of these two categories. To illustrate the difficulty we discovered, a research has been done. We used a questionnaire were we asked people to evaluate the categories from \texttt{Allmusic.com} as either negative or postive and to do the same with some randomly picked song lyrics. The results are shown in figure \ref{fig:histogram}. It can be seen that there is a significant discrepancy of opinion across participants. This emphasizes the personal perception of emotion. Due to this, it cannot be expected to gain a higher accuracy by a classifier in emotion categorisation.
 
 A second model of categorisation used in this research has been proposed by Downie et al.\,\cite{downie20082007}. They used five cluster of emotion to categorise lyrics as shown in table \ref{tab:moodClusters}.
 
@@ -179,9 +185,13 @@ Cluster 5 & aggressive, fiery, tense/anxious, intense, volatile, visceral \\ \hl
 \end{center}
 \end{table}
 
-\paragraph{Variations in categorisation}
+\paragraph{Variations in n-grams} Another parameter we modified was the assignment of $n$ for the $n$-grams. The effect on the accuracy of the classifiers is illustrated by the figures \ref{fig:nGramsEffectTwoMoods} and \ref{fig:nGramsEffectClusters}.
 
-\paragraph{Variations in classifiers}
+\paragraph{Variations in the size of the training set} 
+
+\paragraph{Variations in classifiers} We tested the different classifiers described in \ref{sec:impl}. The performance of different classifiers for the two mood variant are shown in \ref{fig:classifiersPerformanceTwoMoods} and for the cluster variant are presented in \ref{fig:classifiersPerformanceCluster}. As it can be seen in the figures, the ... classifier yields the best average results for both categorisation variants. The reason why the linear classifier is working well is that the tested data is highly individual. There is a significant variance between song lyrics and this is why a linear distinction is the best choice for the data in the present case.
+
+ 
 
 \begin{figure}
 \centering
@@ -191,15 +201,7 @@ describes what is in the picture. Make sure that the text in the figure
 is large enough to read and that the axes are labelled.}
 \label{fig:histogram}
 \end{figure}
-
-Bla bla bla bla bla Figure~\ref{fig:histogram} bla bla bla bla bla bla 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-
-
-Bla bla bla bla bla Table~\ref{tab:results} bla bla bla bla bla bla 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
-bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+ 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

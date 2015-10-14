@@ -50,12 +50,17 @@ allwords_f.close()
 
 #print documents
 
+#print all_words
+
 
 # get the word frequency
 all_words = nltk.FreqDist(all_words) # ordered words according to the amount of its appearances
-print(all_words.most_common(15)) # show the 15 most common words
+print(all_words.most_common(300)) # show the 15 most common words
 
-word_features = list(all_words.keys())[:500] #only look at 6000 most common words
+#word_features = all_words[:3000] #only look at 6000 most common words
+word_features = list(all_words.keys())[:100] #only look at 6000 most common words
+
+
 
 
 def find_features(document):
@@ -68,9 +73,9 @@ def find_features(document):
 
 featuresets = [(find_features(lyrics), category) for (lyrics, category) in documents]
 
-training_set = featuresets[:500] #take the first 5000 words as a training set
+training_set = featuresets[:1000] #take the first 5000 words as a training set
 
-testing_set = featuresets[500:] #take the other words as the test set
+testing_set = featuresets[1000:] #take the other words as the test set
 
 
 
@@ -83,7 +88,7 @@ classifier = nltk.NaiveBayesClassifier.train(training_set)
 print("Naive Bayes Algo acczraxe: ", (nltk.classify.accuracy(classifier, testing_set))*100)
 
 # get most informative features for both categories
-classifier.show_most_informative_features(15)
+classifier.show_most_informative_features(1000)
 
 
 # ATTENTION: in windows you have to use the modes "wb" and "rb" instead

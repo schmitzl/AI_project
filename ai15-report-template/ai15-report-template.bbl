@@ -22,6 +22,13 @@ Thomas~M. Mitchell.
 \newblock {\em Machine Learning}.
 \newblock McGraw-Hill, Inc., New York, NY, USA, 1 edition, 1997.
 
+\bibitem{wilson2005recognizing}
+Theresa Wilson, Janyce Wiebe, and Paul Hoffmann.
+\newblock Recognizing contextual polarity in phrase-level sentiment analysis.
+\newblock In {\em Proceedings of the conference on human language technology
+  and empirical methods in natural language processing}, pages 347--354.
+  Association for Computational Linguistics, 2005.
+
 \bibitem{yang2009music}
 Dan Yang and Won-Sook Lee.
 \newblock Music emotion identification from lyrics.

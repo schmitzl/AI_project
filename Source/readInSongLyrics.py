@@ -13,6 +13,7 @@ import pickle
 
 def getMood(subMood):
     
+    
     posMoods = ["airy", "ambitious", "amiable-good-natured", "animated", "athletic", "atmospheric",
                 "boisterous", "bombastic", "brash", "bravado", "bright", "calm-peaceful",
                 "carefree", "cartoonish", "cathartic", "celebratory", "cerebral", "cheerful",
@@ -52,11 +53,22 @@ def getMood(subMood):
                 "turbulent", "uncompromising", "unsettling", "urgent", "vulgar", "weary",
                 "wintry", "wistful", "wry", "yearning"]
 
+    subMoods = subMood.split(',')
+    
+    posCount = 0
+    negCount = 0
+    
+    for mood in subMoods:
+        if mood in posMoods:
+            posCount+=1
+        else:
+            negCount+=1
 
-    if subMood in posMoods:
-        return "positive"
+    if posCount > negCount:
+        return 'pos'
 
-    return "negative"
+    return 'neg'
+
 
 
 
@@ -70,12 +82,15 @@ def preproccessLyrics(lyrics):
     filtered_word_tokens = [word.lower() for word in word_tokens if not word in stop_words]
     #filtered_word_tokens = [word.lower() for word in word_tokens]
 
-    ps = PorterStemmer()
-    stemmed_filtered_word_tokens = [ps.stem(word) for word in filtered_word_tokens]
+
+    lemmatizer = WordNetLemmatizer()
+    lemmatized_filtered_words = [lemmatizer.lemmatize(word) for word in filtered_words]
+    #ps = PorterStemmer()
+    #stemmed_filtered_word_tokens = [ps.stem(word) for word in filtered_word_tokens]
 
     preproccessedLyrics = ""
 
-    for word in stemmed_filtered_word_tokens:
+    for word in lemmatized_filtered_words:
         preproccessedLyrics += " " + word
 
     return preproccessedLyrics
@@ -85,7 +100,7 @@ documents = []
 all_words = ""
 
 
-with open('evenSmallerSongDb.csv', 'rU') as f:
+with open('songsClusteredMoods.csv', 'rU') as f:
     reader = csv.reader(f, delimiter=';', dialect=csv.excel_tab)
     for line in reader:
         documents.append( (preproccessLyrics(line[1]), getMood(line[0])) )
