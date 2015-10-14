@@ -139,14 +139,19 @@ $$
 
 The model is particularly useful for shorter texts where the lack of certain features can tell you more than solely analyzing occurring features. 
 
-\item \textit{Logistic regression}
-Logistic regression is a linear model for classification where the probabilities describing the possible outcomes of a single event are modeled using a logistic function.
+\item \textit{Logistic Regression}
+Logistic regression is a linear model for classification where the probabilities describing the possible outcomes of a single event are modeled using a logistic function. This model is then used to classify new input data. 
+
+\item \textit{Support Vector Machine}
+If input data are overlap and have similar features, SVMs can be used. They essentially perform non-linear separations by transforming input data to higher dimensions with so called Kernels. This is then combined with a Lagrange constraint to find hyperplanes which separates classes with the largest distance. 
+
+
+\item \textit{Linear Support Vector Machine}
+The main difference with linear SVM compared to kernel SVMs is that the  input data is linearly separable and thus a non-linear kernel to transform data to an higher dimension is not necessary. They are particularly useful for data which have a lot of features and thus easier and faster to separate with a hyperplane.
 
 \item \textit{Stochastic gradient descent}
+This classifier combines multiple binary classifiers to separate features in input data. These classifiers are then updated using a version of gradient descent to update the parameters and minimize the error. In contrast to normal gradient descent the stochastic version updates the classification parameters for every training example it encounters with respect to the gradient of the error. Traditionally one has to run through the entire training set before calculating the gradient and updating the parameters. This method allows for a faster learning rate compared to batch gradient descent.
 
-\item \textit{Support vector machine}
-Supper 
-\item \textit{Linear support vector machine}
 \item \textit{Combination of multiple classifiers} We combined all introduced classifier into one classifier. It basically classifies documents according to how many classifiers resulted into a certain category. The category, to which most of the classification results belong to, gets selected as the resulting category of the song.
 \end{itemize}
 
