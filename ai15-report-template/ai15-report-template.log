@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.17)  16 OCT 2015 10:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.17)  16 OCT 2015 10:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -162,32 +162,37 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 42.
 
-<pictures/Alan_Turing_photo.jpg, id=1, 42.75975pt x 53.4798pt>
-File: pictures/Alan_Turing_photo.jpg Graphic file (type jpg)
+<pictures/akashPatel_photo.jpg, id=1, 42.75975pt x 53.4798pt>
+File: pictures/akashPatel_photo.jpg Graphic file (type jpg)
 
-<use pictures/Alan_Turing_photo.jpg>
-Package pdftex.def Info: pictures/Alan_Turing_photo.jpg used on input line 42.
-(pdftex.def)             Requested size: 50.7019pt x 63.4157pt.
-File: pictures/Alan_Turing_photo.jpg Graphic file (type jpg)
- <use pictures/Alan_Turing_photo.jpg>
-Package pdftex.def Info: pictures/Alan_Turing_photo.jpg used on input line 42.
+<use pictures/akashPatel_photo.jpg>
+Package pdftex.def Info: pictures/akashPatel_photo.jpg used on input line 42.
 (pdftex.def)             Requested size: 50.7019pt x 63.4157pt.
 
-<pictures/lisaSchmitz_photo.jpeg, id=2, 607.26875pt x 810.02625pt>
+<pictures/chris.jpg, id=2, 1010.0937pt x 1263.2796pt>
+File: pictures/chris.jpg Graphic file (type jpg)
+ <use pictures/chris.jpg>
+Package pdftex.def Info: pictures/chris.jpg used on input line 42.
+(pdftex.def)             Requested size: 50.7019pt x 63.39899pt.
+
+<pictures/lisaSchmitz_photo.jpeg, id=3, 607.26875pt x 810.02625pt>
 File: pictures/lisaSchmitz_photo.jpeg Graphic file (type jpg)
 
 <use pictures/lisaSchmitz_photo.jpeg>
 Package pdftex.def Info: pictures/lisaSchmitz_photo.jpeg used on input line 42.
 
 (pdftex.def)             Requested size: 50.7019pt x 67.62149pt.
-File: pictures/Alan_Turing_photo.jpg Graphic file (type jpg)
- <use pictures/Alan_Turing_photo.jpg>
-Package pdftex.def Info: pictures/Alan_Turing_photo.jpg used on input line 42.
-(pdftex.def)             Requested size: 50.7019pt x 63.4157pt.
+
+<pictures/nick.jpg, id=4, 1010.0937pt x 1263.2796pt>
+File: pictures/nick.jpg Graphic file (type jpg)
+ <use pictures/nick.jpg>
+Package pdftex.def Info: pictures/nick.jpg used on input line 42.
+(pdftex.def)             Requested size: 50.7019pt x 63.39899pt.
 
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
- <./pictures/Alan_Turing_photo.jpg> <./pictures/lisaSchmitz_photo.jpeg>] [2
+ <./pictures/akashPatel_photo.jpg> <./pictures/chris.jpg> <./pictures/lisaSchmi
+tz_photo.jpeg> <./pictures/nick.jpg>] [2
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -197,7 +202,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 90.
 
-<pictures/flowChartBagOfWords.pdf, id=16, 722.7pt x 542.025pt>
+<pictures/flowChartBagOfWords.pdf, id=18, 722.7pt x 542.025pt>
 File: pictures/flowChartBagOfWords.pdf Graphic file (type pdf)
 
 <use pictures/flowChartBagOfWords.pdf>
@@ -231,7 +236,7 @@ ed on input line 197.
 LaTeX Warning: Reference `fig:classifiersPerformanceCluster' on page 8 undefine
 d on input line 197.
 
-<pictures/histogram.pdf, id=88, 506.89375pt x 394.47375pt>
+<pictures/histogram.pdf, id=90, 506.89375pt x 394.47375pt>
 File: pictures/histogram.pdf Graphic file (type pdf)
 
 <use pictures/histogram.pdf>
@@ -242,15 +247,12 @@ Package pdftex.def Info: pictures/histogram.pdf used on input line 203.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 1799 strings out of 493089
- 25767 string characters out of 6134842
- 87372 words of memory out of 5000000
- 5265 multiletter control sequences out of 15000+600000
+ 1809 strings out of 493089
+ 25957 string characters out of 6134842
+ 87354 words of memory out of 5000000
+ 5273 multiletter control sequences out of 15000+600000
  10553 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,16n,43p,1155b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -268,10 +270,10 @@ xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ai15-report-template.pdf (9 pages, 412573 bytes).
+Output written on ai15-report-template.pdf (9 pages, 2330914 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
+ 147 PDF objects out of 1000 (max. 8388607)
  96 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
