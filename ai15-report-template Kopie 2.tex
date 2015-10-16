@@ -51,21 +51,28 @@ This paper explores the potential accuracy of the analysis of song lyrics. Datas
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduction}
+\section*{NOTE}
+Related Works, Experimental Results, Discussions, Summary are sections that MUST be contained.
+
+ The section \textit{Contributions} is a place to express any difference in contributions. The default assumption is that you all agree that all of you had an equal part to play in the project.
+
+\section{Introduction (1--2 pages)}
 \label{sec:intro}
 
 Music is perhaps considered the most impactful art medium in terms penetration and cultural relevance. Most people are familiar with the feeling of how a song can influence our mood to be everything between melancholy to euphoric. This control over people's feelings is something which can be used for many different purposes. For example music providers like Spotify offer playlists labeled with a certain mood and also play similar songs if requested. But industries are not the only area of application. Researchers see a use for it in edutainment and even psychological therapy\,\cite{kim2010music}. Unfortunately, the task of predicting the correct associated mood is not an easy one due to the complexity of how emotion is transferred in songs. Obviously emotion is encoded both in the audio and the lyrics of a song\,\cite{yang2008regression}. This paper compares methods to identify emotion by solely analysing the text of song lyrics. In order to do this, different variants of a text analyser was tested. The modification includes using different categories of expressive emotions and classifiers. 
 
+\subsection{Contribution}
+
+
 \subsection{Outline}
-Since our work deals with different approaches of categorising and classifying song lyrics, previous work should be taken into count. The related work is therefore presented in Section~\ref{sec:relwork}. We based our text analyser in the results of this previous studies. Section~\ref{sec:method} explains the method we used to realise and implement the analyser in detail. We used different variations of our text analyser, modifying the categorisation and the classifier. The results we were able to gather are described in  Section~\ref{sec:exps}. Moreover, problems that came up during the research are mentioned in this section. The results are summarised in  Section~\ref{sec:summary} and possible further research areas are touched upon briefly.
+Since our work deals with different approaches of categorising and classifying song lyrics, previous work should be taken into count. The related work is therefore presented in Section~\ref{sec:relwork}. We based our text analyser in the results of this previous studies. Section~\ref{sec:method} explains the method we used to realise and implement the analyser in detail. We used different variations of our text analyser, modifying the the categorisation and the classifier. The results we were able to gather are described in  Section~\ref{sec:exps}. Moreover, problems that came up during the research are mentioned in this section. The results are summarised in  Section~\ref{sec:summary} and possible further research areas are touched upon briefly.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Related work}
 \label{sec:relwork}
-Our work is mainly based the on paper of Youngmoo E. Kim et al.\,\cite{kim2010music}. It gives an overview of recent approaches of emotion recognition in lyrics.  Most of the presented approaches are content-based and  therefore relevant references for our work. Not only do they deal with different categorisations of mood but also treat variations of classifiers. This work provides a good insight into what has already been done and what worked well. Therefore it can be seen as the foundation we built our work on. We realised some of the presented methods and compared them to each other. 
+Our work is mainly based the on paper of Youngmoo E. Kim et al.\,\cite{kim2010music}. It gives an overview of recent approaches of emotion recognition in lyrics.  Most of the presented approaches are content-based and are therefore relevant references for our work. Not only do they deal with different categorisations of mood but also treat variations of classifiers. This work provides a good insight into what has already been done and what worked well. Therefore it can be seen as the foundation we built our work on. We realised some of the presented methods and compared them to each other. 
 
-% TODO connect senteces, more work
 Different bag-of-words model classifiers are explained by Li et al.\,\cite{li1998classification}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -73,13 +80,14 @@ Different bag-of-words model classifiers are explained by Li et al.\,\cite{li199
 \section{Method}
 \label{sec:method}
 
-The basic model we used for our text analyser is the bag-of-words model\,\cite{Mitchell}. The functionality is illustrated in the figure \ref{fig:bagOfWords}. In this model a database with labeled data such as lyrics are stored. The next step would be to pre-process the lyrics and create a dictionary with $n$-grams based on it. The database is divided into two parts: a training and a test set. Using this data, a classifier is trained with a training set and its accuracy can then be evaluated with the classification of the test set. 
+Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
 
 \subsection{Implementation}
-The following section will discuss the individual parts of the text analyser in greater detail whilst providing some relevant scientific  background to the classification methods used. 
-
 \label{sec:impl}
 
+The basic model we used for our text analyser is the bag-of-words model\,\cite{Mitchell}. The functionality is illustrated in the figure \ref{fig:bagOfWords}. In this model a database with labeled data such as lyrics are stored. The next step would be to pre-process the lyrics and create a dictionary with $n$-grams based on it. The database is divided into two parts: a training and a test set. Using this data, a classifier is trained with a training set and its accuracy can then be evaluated with the classification of the test set. In the following abstracts the individual parts of the bag-of-words model will be explained in detail. 
 
 \begin{figure}
 \centering
@@ -92,11 +100,9 @@ is large enough to read and that the axes are labelled.}
 
 \paragraph{Database} The database was one of the most difficult parts of this research. Due to copyright issues it was not possible to access a already available database and we had to built one on our own. Some earlier researches use \texttt{Allmusic.com} as a basis for the database \cite{kim2010music}, since it provides emotional labels for songs. For this reason a program has been written to extract lyrics along with their emotional labels. 
 
-Even though the pre-labeling of the songs were helpful, with 289 emotional labels there were simply too many categories to use. Therefore we had to find super-categories for existing labels. 
-%  super which means...
-Downie et al. suggest in \,\cite{downie20082007}  to use five clusters of emotions. Whereas Yang and Lee only suggests a binary distinction into positive and negative emotions\,\cite{yang2009music}. Both variants were tested during our research.
+Even though the pre-labeling of the songs were helpful, with over ... emotional labels it were simply to many categories to use. Therefore we had to find supercategories for the existing labels. Downie et al. suggest in \,\cite{downie20082007}  to use five clusters of emotions. Whereas Yang and Lee only suggests a binary distinction into positive and negative emotions\,\cite{yang2009music}. Both variants were tested during our research.
 
-\paragraph{Pre-processing} The lyrics have been pre-processed the same way for each of the variants of the text analyser. Stop-words are filtered out using the Natural Language Toolkit and special characters are deleted. In a next step, every word of the lyric is stemmed which means that it is transferred into its basic form. For example "wait" and "waiting" would be interpreted as the same word after the stemming has been done. The pre-processing is performed to avoid misclassifications. 
+\paragraph{Pre-processing} The lyrics have been pre-processed the same way for each of the variants of the text analyser. Stop-words are filtered out using the Natural Language Toolkit and special character are deleted. In a next step, every word of the lyric is stemmed which means that it is transferred into its basic form. For example "wait" and "waiting" would be interpreted as the same word after the stemming has been done. The pre-processing is performed due to avoid misclassifications. 
 
 \paragraph{Feature extraction} The feature extraction is conducted for all lyrics. The procedure consists of transferring the lyrics into $n$-gram representation. We considered only 1-, 2- and 3-grams as reasonable parameters which is why only these have been tested in our study. 
 
@@ -133,22 +139,20 @@ $$
 
 The model is particularly useful for shorter texts where the lack of certain features can tell you more than solely analyzing occurring features. 
 
-%TODO cite
 \item \textit{Logistic Regression}
 Logistic regression is a linear model for classification where the probabilities describing the possible outcomes of a single event are modeled using a logistic function. This model is then used to classify new input data. 
 
-%TODO cite
 \item \textit{Support Vector Machine}
 If input data are overlap and have similar features, SVMs can be used. They essentially perform non-linear separations by transforming input data to higher dimensions with so called Kernels. This is then combined with a Lagrange constraint to find hyperplanes which separates classes with the largest distance. 
 
-%TODO cite
+
 \item \textit{Linear Support Vector Machine}
 The main difference with linear SVM compared to kernel SVMs is that the  input data is linearly separable and thus a non-linear kernel to transform data to an higher dimension is not necessary. They are particularly useful for data which have a lot of features and thus easier and faster to separate with a hyperplane.
 
-%TODO cite
 \item \textit{Stochastic gradient descent}
-This classifier combines multiple binary classifiers to separate features in input data. These classifiers are then updated using a version of gradient descent to update the parameters and minimize the error. In contrast to normal gradient descent the stochastic version updates the classification parameters for every training example it encounters with respect to the gradient of the error. In the batch gradient descent one has to run through the entire training set before calculating the gradient and updating the parameters, which is usually slower. 
+This classifier combines multiple binary classifiers to separate features in input data. These classifiers are then updated using a version of gradient descent to update the parameters and minimize the error. In contrast to normal gradient descent the stochastic version updates the classification parameters for every training example it encounters with respect to the gradient of the error. Traditionally one has to run through the entire training set before calculating the gradient and updating the parameters. This method allows for a faster learning rate compared to batch gradient descent.
 
+\item \textit{Combination of multiple classifiers} We combined all introduced classifier into one classifier. It basically classifies documents according to how many classifiers resulted into a certain category. The category, to which most of the classification results belong to, gets selected as the resulting category of the song.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -158,22 +162,15 @@ This classifier combines multiple binary classifiers to separate features in inp
 The goal of our experiment was to compare the performance of different variants of the bag-of-words model classification for emotion in lyrics. 
  
 
-\subsection{Experimental setup}
-In order to compare the performance of the different classifier variants we changed various parameters. The effect of different amounts of emotional categories have been tested, as well as variations of the $n$-grams, the size of the training set and classifiers.
+\subsection{Experiemntal setup}
+In order to compare the performance of the different classifier variants we changed various parameters. The effect of different amounts of emotional categories have been tested, as well as variations of the $n$ of the $n$-grams, the size of the trainingsset and classifiers.
 
 
-\subsection{Results}
+\subsection{Experiment ...}
 
-Overall the research show a satisfactory accuracy rate of ???$\%$ for the best performing classifier as seen in ref{fig:classifierAccuracy}. Furthermore, from this figure we see that the best classifiers, Linear SVM and Logisitc regression are in fact linear. This can be explained by having highly individualized data with large feature space. Thus more complicated classifiers like kernel SVMs are not necessary. However, the NB and Multinomial NB do not perform well at all. This might be due to \textit{sparseness}, meaning the training data is not large enough to represent the frequencies of certain $n$-gram phrases with $n > 1$.
+\paragraph{Drawbacks} We were aware of the difficulty of the task of designing a sufficient lyrics classifier. In recent years a lot of research has been conducted in this area but there is still a lack of a reliable lyrics analyser. But during our research we were able to gain a better insight into the nature of this difficulty. Feelings and emotions are something very personal, and the perception of the emotion which is transferred by a certain lyric highly depends on the person who is percieving said lyric. It is not unusual that two people strongly disagree on the general mood of a lyrical text\,\cite{wilson2005recognizing}. This is why it is of supreme importance to select a representative model of categories.
 
-%less independent -> accuracy drops
-%just teted this and performance bad, should be over specified
-
-%we have less data for one cluster to train. double amount of moods covered
-
-\paragraph{Variations in categorisation} During our research we came to the conclusion that the use of only two categories - positive and negative - seem to have let to an overgeneralisation of emotions. Even the categories itself which were provided by \texttt{Allmusic.com} could not clearly be mapped to one of these two categories. To illustrate the difficulty we discovered, a small study was conducted. Using a questionnaire people were asked to evaluate the categories from \texttt{Allmusic.com} as evoking either a negative or positive feeling and to do the same with some randomly picked song lyrics. The results are shown in figure ???. It can be seen that there is a significant discrepancy of opinion across participants. This emphasises the personal perception of emotion. Due to this, it cannot be expected to gain a higher accuracy by a classifier in emotion categorisation.
-
-%TODO refer to Chris's paper, compare our survey to theirs
+\paragraph{Variations in categorisation} During our research we came to the conclusion that the use of only two categories - positive and negative - seem to have let to an overgeneralisation of emotions. Even the categories itself which were provided by \texttt{Allmusic.com} could not clearly be mapped to one of these two categories. To illustrate the difficulty we discovered, a small study was conducted. Using a questionnaire people were asked to evaluate the categories from \texttt{Allmusic.com} as evoking either a negative or positive feeling and to do the same with some randomly picked song lyrics. The results are shown in figure \ref{fig:histogram}. It can be seen that there is a significant discrepancy of opinion across participants. This emphasises the personal perception of emotion. Due to this, it cannot be expected to gain a higher accuracy by a classifier in emotion categorisation.
 
 A second model of categorisation used in this research has been proposed by Downie et al.\,\cite{downie20082007}. They used five cluster of emotion to categorise lyrics as shown in table \ref{tab:moodClusters}.
 
@@ -204,24 +201,21 @@ Cluster 5 & aggressive, fiery, tense/anxious, intense, volatile, visceral \\ \hl
 \end{figure}
 
 \paragraph{Variations in the size of the training set} 
-$(Do we Really need This section)?$
 
 \paragraph{Variations in classifiers} We tested the different classifiers described in \ref{sec:impl}. The performance of different classifiers for the two mood variant are shown in \ref{fig:classifiersPerformanceTwoMoods} and for the cluster variant are presented in \ref{fig:classifiersPerformanceCluster}. As it can be seen in the figures, the ... classifier yields the best average results for both categorisation variants. The reason why the linear classifier is working well is that the tested data is highly individual. There is a significant variance between song lyrics and this is why a linear distinction is the best choice for the data in the present case.
 
-
-\paragraph{Drawbacks} We were aware of the difficulty of the task of designing a sufficient lyrics classifier. In recent years a lot of research has been conducted in this area but there is still a lack of a reliable lyrics analyser. But during our research we were able to gain a better insight into the nature of this difficulty. Feelings and emotions are something very personal, and the perception of the emotion which is transferred by a certain lyric highly depends on the person who is perceiving said lyric. It is not unusual that two people strongly disagree on the general mood of a lyrical text\,\cite{wilson2005recognizing}. This is why it is of supreme importance to select a representative model of categories.
  
 
-
+ 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Summary and Conclusions}
 \label{sec:summary}
 
-From the results we can conclude that the presented text analyser can successfully classify lyrics to a positive or negative mood with a satisfactory degree. The most accurate classifiers are Linear SVM, kernel SVM and Logistic Regression. 
-
-The greatest limitation to this project was the subjectivity of how song lyrics are perceived. Some people may identify a song as cheerful while others find it brooding. This definitely affects the labeling in the training set since we consider the labels an accurate reflection of the real world. 
+Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
