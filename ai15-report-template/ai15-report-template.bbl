@@ -1,4 +1,16 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{SGD}
+Cs229 lecture notes.
+
+\bibitem{NBandLogistic}
+Generative and discriminative classifiers: Naive bayes and logistic regression.
+
+\bibitem{NBBernoulli}
+Text classification using naive bayes.
+
+\bibitem{SVM}
+￼support vector machine (and statistical learning theory )tutorial.
 
 \bibitem{downie20082007}
 XHJS Downie, Cyril Laurier, and MBAF Ehmann.
@@ -21,6 +33,11 @@ Yong~H Li and Anil~K. Jain.
 Thomas~M. Mitchell.
 \newblock {\em Machine Learning}.
 \newblock McGraw-Hill, Inc., New York, NY, USA, 1 edition, 1997.
+
+\bibitem{MultiNB}
+Jason~D Rennie, Lawrence Shih, Jaime Teevan, David~R Karger, et~al.
+\newblock Tackling the poor assumptions of naive bayes text classifiers.
+\newblock In {\em ICML}, volume~3, pages 616--623. Washington DC), 2003.
 
 \bibitem{wilson2005recognizing}
 Theresa Wilson, Janyce Wiebe, and Paul Hoffmann.
